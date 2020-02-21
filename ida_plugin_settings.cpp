@@ -14,14 +14,14 @@ static bool idaapi run(size_t)
 	qstring path;
 	if(ask_str(&path, HIST_DIR, "ps4libdoc path:"))
 	{
-		settings.setValue("path", path.c_str());
+		settings.setValue(const_cast<char*>("path"), path.c_str());
 	}
 
 	{
 		int buttonID = ASKBTN_CANCEL;
 		if((buttonID = ask_yn(ASKBTN_NO, "Display Library Names?")) != ASKBTN_CANCEL)
 		{
-			settings.setValue("loadlibname", buttonID == ASKBTN_YES ? true : false);
+			settings.setValue(const_cast<char*>("loadlibname"), buttonID == ASKBTN_YES ? true : false);
 		}
 	}
 	settings.Save();

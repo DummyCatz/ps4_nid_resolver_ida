@@ -1,3 +1,7 @@
 build
 build-*
 .vscode
+idasdk70/
+msvc/build/
+msvc/temp/
+msvc/.vs/

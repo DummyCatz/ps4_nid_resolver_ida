@@ -13,14 +13,14 @@
 static bool idaapi run(size_t)
 {
 	CIDASettings settings;
-	std::string jsonpath = settings.getAsString("path");
+	std::string jsonpath = settings.getAsString(const_cast<char*>("path"));
 	if(jsonpath.empty())
 	{
 		qstring path;
 		if(ask_str(&path, HIST_DIR, "ps4libdoc path:"))
 		{
 			jsonpath = path.c_str();
-			settings.setValue("path", jsonpath.c_str());
+			settings.setValue(const_cast<char*>("path"), jsonpath.c_str());
 		}
 		else
 		{
@@ -33,8 +33,8 @@ static bool idaapi run(size_t)
 	get_input_file_path(buf, size);
 
 	CPS4 ps4(buf);
-	ps4.LoadLibNames(settings.getAsBool("loadlibname"));
-	ps4.LoadJsonPath(settings.getAsString("path"));
+	ps4.LoadLibNames(settings.getAsBool(const_cast<char*>("loadlibname")));
+	ps4.LoadJsonPath(settings.getAsString(const_cast<char*>("path")));
 	ps4.LoadHeader();
 	ps4.LoadJsonSym();
 	ps4.LoadSym();

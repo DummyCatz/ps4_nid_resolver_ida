@@ -15,7 +15,20 @@ cd ps4_nid_resolver_ida
 ```
 Note: on windows you'd need to change `--idaq C:\Users\USERNAME\AppData\Hex-Rays\IDA Pro\`
 
+## How-To-Build Using Visual Studio 2017
+
+1. Clone the repository
+
+```bash
+git clone --recurse-submodules https://github.com/Thunder07/ps4_nid_resolver_ida.git
+cd ps4_nid_resolver_ida
+```
+
+2. Copy your IDAPro7.0 SDK into ps4_nid_resolver_ida\idasdk70
+3. The visual studio solution is in msvc folder
+
 ## How-To-Use
+
 `Ctrl+Alt+F10`: Basic Settings Panel
 
 `Ctrl+F10`: Resolve Function Names (Note: this action is none reversible, make sure you've a copy of your ida database before applying this)

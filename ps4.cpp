@@ -250,7 +250,7 @@ bool CPS4::LoadJsonSymFile(std::string filename, bool clearmap)
 
 	if (config_doc.bad())
 	{
-		msg("[x] Error opening file %s. %s", filename.c_str(), strerror(errno));
+		msg("[x] Error opening file %s. %s\n", filename.c_str(), strerror(errno));
 		return false;
 	}
 
@@ -306,7 +306,7 @@ bool CPS4::LoadJsonSymFile(std::string filename, bool clearmap)
 	}
 	catch (std::exception const &e)
 	{
-		msg("Json parsing error. %s\n", e.what());
+		msg("[x] Json parsing error. %s\n", e.what());
 		return false;
 	}
 

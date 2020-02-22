@@ -222,9 +222,21 @@ bool CPS4::LoadJsonSym(bool clearmap)
 	for(int i = 0, offset = 1; i < _libname_count; ++i)
 	{
 		std::string libName = string_table.get(offset);
-		offset += libName.length() +1;
-		libName = libName.substr(0, libName.size()-4);
+		offset += libName.length() + 1;
+		auto index = libName.find(".prx");
+		auto index2 = libName.find(".sprx");
+
+		if (index != std::string::npos)
+		{
+			libName = libName.substr(0, index);
+		}
+		else if (index2 != std::string::npos)
+		{
+			libName = libName.substr(0, index2);
+		}
+
 		libName += ".sprx.json";
+
 		msg("offset: %d libName: %s", offset, libName.c_str());
 		std::string jsonpath = "";
 		if(FindJsonSym(path.c_str(), libName.c_str(), &jsonpath))

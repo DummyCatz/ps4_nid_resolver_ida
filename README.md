@@ -20,7 +20,7 @@ Note: on windows you'd need to change `--idaq C:\Users\USERNAME\AppData\Hex-Rays
 1. Clone the repository
 
 ```bash
-git clone --recurse-submodules https://github.com/Thunder07/ps4_nid_resolver_ida.git
+git clone --recurse-submodules https://github.com/DummyCatz/ps4_nid_resolver_ida.git
 cd ps4_nid_resolver_ida
 ```
 
